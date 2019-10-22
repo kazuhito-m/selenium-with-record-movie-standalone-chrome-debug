@@ -16,7 +16,7 @@ base image: [selenium/standalone-chrome-debug](https://hub.docker.com/r/selenium
 docker run -d -p 4444:4444 -p 5900:5900 \
     -v ${PWD}:/output \
     --name selenium-rec \
-    kazuhitoselenium-with-record-movie-standalone-chrome-debug
+    kazuhito/selenium-with-record-movie-standalone-chrome-debug
 
 docker exec selenium-rec start-recording
 
