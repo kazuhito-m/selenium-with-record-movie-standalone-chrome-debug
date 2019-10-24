@@ -1,4 +1,5 @@
-# Selenium with record movie(based by "standalone-chrome-debug").
+Selenium with record movie(based by "standalone-chrome-debug")
+===
 
 ## What's this
 
@@ -21,6 +22,7 @@ docker run -d -p 4444:4444 -p 5900:5900 \
 docker exec selenium-rec start-recording
 
 # execute E2E testing...
+# ex: ./gradlew clean imtegrationTest
 
 docker exec selenium-rec end-recording
 
