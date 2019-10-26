@@ -18,11 +18,13 @@ RUN update-locale LANG=ja_JP.UTF-8
 RUN echo "LC_ALL=ja_JP.UTF-8" >> /etc/default/locale
 RUN mv /etc/localtime /etc/localtime.org
 RUN ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-ENV TZ Asia/Tokyo
+ENV TZ='Asia/Tokyo'
 
 # create scripts
 
-RUN echo "#!/bin/bash\nrecordmydesktop --display=\$DIPLAY --no-sound --on-the-fly-encoding --delay=10s -o /output/test-evidence.ogv &" > /usr/local/bin/start-recording
+ENV RECORDING_WAIT_SECCOND=5
+
+RUN echo "#!/bin/bash\nrecordmydesktop --display=\$DIPLAY --no-sound --on-the-fly-encoding --delay=\${RECORDING_WAIT_SECCOND}s -o /output/test-evidence.ogv &" > /usr/local/bin/start-recording
 RUN chmod 755 /usr/local/bin/start-recording
 
 RUN echo "#!/bin/bash\nkillall recordmydesktop" > /usr/local/bin/end-recording
