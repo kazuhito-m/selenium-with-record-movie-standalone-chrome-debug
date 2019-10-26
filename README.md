@@ -31,6 +31,12 @@ ls *.ogv
 test-evidence.ogv
 ```
 
+### Option
+
+`docker run -e [環境変数]=[値]`  で設定出来る「このコンテナ独自の環境変数」。
+
+- `RECORDING_WAIT_SECCOND` : 録画開始前に必ず入る「猶予秒」値。defaultは `5`
+
 ## Author
 
 - [kazuhito_m](https://twitter.com/kazuhito_m)
