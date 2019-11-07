@@ -22,9 +22,9 @@ ENV TZ='Asia/Tokyo'
 
 # create scripts
 
-ENV RECORDING_WAIT_SECCOND=5
+ENV RECORDING_WAIT_SECOND=5
 
-RUN echo "#!/bin/bash\nrecordmydesktop --display=\$DIPLAY --no-sound --on-the-fly-encoding --delay=\${RECORDING_WAIT_SECCOND}s -o /output/test-evidence.ogv &" > /usr/local/bin/start-recording
+RUN echo "#!/bin/bash\nrecordmydesktop --display=\$DIPLAY --no-sound --on-the-fly-encoding --delay=\${RECORDING_WAIT_SECOND}s -o /output/test-evidence.ogv &" > /usr/local/bin/start-recording
 RUN chmod 755 /usr/local/bin/start-recording
 
 RUN echo "#!/bin/bash\nkillall recordmydesktop" > /usr/local/bin/end-recording
